@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body{
+    height: 100%;
+}
+
+@white:#FFFFFF;
+
+.calc-left(@num){
+    left:-webkit-calc(@num + 20px);
+    left:-moz-calc(@num + 20px);
+    left: calc(@num + 20px);
+}
+
+
+body{
+    font:14px "lucida grande",helvetica,arial,sans-serif;
+    background: #000;
+    color: @white;
+    text-align: center;
+}
+header,
+.left,
+.right{
+    position: absolute;
+}
+header{
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    height: 150px;
+    border: solid 1px @white;
+    
+    h1{
+        font-size: 40px;
+        height: 60px;
+        line-height: 60px;
+    }
+    .type{
+        overflow: hidden;
+        text-align: center;
+        font-size: 0;
+        margin: 10px 0;
+        
+        li{
+            display: inline-block;
+            line-height: 36px;
+            font-size: 16px;
+            width: 80px;
+            background: #000;
+            border: 1px solid @white;
+            cursor: pointer;
+        }
+        li:first-child{
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            border-right: none;
+        }
+        li:last-child{
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+        .selected{
+            background: #FFFFFF;
+            color: #000000;
+        }
+        input{
+            -webkit-appearance: none;
+            height: 8px;
+            background: #999;
+            border-radius: 10px;
+            outline: none;
+        }
+        input::-webkit-slider-thumb{
+            -webkit-appearance: none;
+            height: 12px;
+            width: 12px;
+            background: #FFFFFF;
+            border-radius: 100%;
+            cursor: pointer;
+        }
+        input::-moz-range-track{
+            height: 8px;
+            background: #999;
+            border-radius: 10px;
+            border: none;
+        }
+        input::-moz-range-thumb{
+            height: 12px;
+            width: 12px;
+            background: #FFFFFF;
+            border: none;
+            border-radius: 100%;
+            cursor: pointer;
+        }
+    }
+}
+
+.left{
+    left: 10px;
+    top: 170px;
+    bottom: 10px;
+    width: 15%;
+    border:solid 1px @white;
+    overflow: auto;
+    
+    ul{
+        overflow: auto;
+        height: 100%;
+    
+        li{
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .selected{
+            color: green;
+        }
+    }
+    
+}
+.right{
+    top: 170px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid @white;
+    .calc-left(15%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
